@@ -1,0 +1,1231 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',
+    sans-serif;
+    background-color: black;
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+header.site-header {
+  z-index: 1000 !important;
+}
+.dropdown {
+  z-index: 1001 !important;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* move behind everything */
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#heroVideoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  transition: opacity 1s ease;
+}
+
+#heroVideoWrapper.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+.image-gradient{
+    position: absolute;
+    top:0;
+    right: 0;
+    opacity: 0.5;
+    z-index:-5;
+
+
+
+
+
+
+}
+.layer-blur{
+    height:0;
+    width: 30rem;
+    position: absolute;
+    top:20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px rgb(27, 37, 110);
+    rotate: -30deg;
+    z-index:-5;
+
+
+}
+
+.container{
+    width:100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow-x: visible;
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+}
+
+header h1{
+    margin:0;
+    font-size:3rem;
+    font-weight: 300;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* reduce from 3rem for tighter spacing */
+    margin-left: 0; /* remove negative margin */
+}
+
+nav a {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+
+
+}
+nav a:hover {
+    color: #a7a7a7;
+
+
+}
+
+
+/*main contect*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem); /* fixed calculation */
+    min-height: unset; /* Or remove this line if you don’t need minimum height */
+    padding-top: 0.5rem;
+    
+}
+
+.content{
+    max-width:40rem;
+    margin: 3rem auto 4rem auto; /* reduced top margin */
+    margin-left:10%;
+    z-index:999;
+    
+    padding: 0 1rem;}
+
+.hero-heading {
+  text-align: left;
+  line-height: 1.1;
+  margin: 0;
+  margin-left:8%;
+}
+
+.hero-heading .line-1 {
+  font-size: 5rem;  /* adjust as needed */
+  font-weight: 700;
+  color: #dae0cc;
+  text-shadow: 0 0 10px rgba(135, 132, 132, 0.2);
+  margin-left:8%;
+}
+
+.hero-heading .line-2 {
+  font-size: 5rem;  /* bigger than line 1 */
+  font-weight: 800;
+  color: #d4d6cf;
+  text-shadow: 0 0 15px rgba(180, 180, 255, 0.3);
+  margin-left:8%;
+}
+
+.hero-heading .line-3 {
+  font-size: 2.5rem;  /* bigger than line 1 */
+  font-weight: 800;
+  color: #d4d6cf;
+  text-shadow: 0 0 15px rgba(180, 180, 255, 0.3);
+  margin-left:45%;
+}
+
+    
+
+
+.tag-box {
+  position: relative;
+  width: 24rem; /* increased from 18rem */
+  height: 3.5rem; /* increased from 2.5rem */
+  border-radius: 50px;
+  background: linear-gradient(to right, #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565);
+  background-size: 200%;
+  animation: animationGradient 2.5s linear infinite;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes animationGradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+.tag-box .tag {
+  position: absolute;
+  inset: 3px;
+  background-color: black;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+  font-size: 1.1rem; /* Increased font size for better visibility */
+  padding: 0 1rem;
+}
+
+.tag-box .tag:hover {
+  color: #5300a0;
+}
+
+
+.content h1 {
+  font-size: 6rem; /* made it larger */
+  font-weight: 700;
+  line-height: 1.0;
+  color: #c8c7c7;
+  text-shadow: 0 0 10px rgba(164, 163, 155, 0.4), 0 0 20px rgba(36, 6, 82, 0.2);
+  margin-top: 1rem;
+
+}
+
+.description{
+   font-size: 1.5rem;
+  color: #aabaff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+
+}
+.buttons{
+    display:flex;
+    gap:1rem;
+    margin-top: 3rem;
+
+}
+
+
+
+
+
+.section-more-info {
+  padding: 6rem 2rem;
+  background-color: #0a0a0a;
+  color: #e7e7e7;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+
+.robot-3d {
+  position: fixed;              /* Makes it stay in place while scrolling */
+  top: 10%;
+  right: -16%;
+  transform: translateX(40px);  /* Adjust horizontally */
+  width: 750px;
+  height: 650px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+
+.robot-3d:hover {
+  transform: translateY(-20px);
+  transition: transform 0.25s ease;
+}
+
+
+.spline-hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.spline-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 3rem;         /* Makes the AIRAVATHA text bigger */
+    font-weight: 600;
+    color: #e7e7e7;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    transform: translateY(0.3cm);
+    margin-left: 0.7cm; /* Shifts it visually without changing layout spacing */
+}
+
+.mission-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+.company-hero {
+  display: block;
+  padding: 0.05rem 2rem 2rem 2rem; /* reduced top padding */
+  margin-top: 0;               /* remove any added spacing */
+  text-align: center;
+  position: relative;
+  
+}
+
+
+
+.pilot-join-main {
+  /* remove full-screen forcing */
+  min-height: auto;
+
+  /* center the form but with less empty space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  
+  /* tighter padding */
+  padding: 1rem 0.5rem;
+}
+
+.pilot-form-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 2rem
+}
+
+.pilot-form-container h1 {
+  color: #e0e0ff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(160, 160, 255, 0.4);
+}
+
+.pilot-form-container p {
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.pilot-form input,
+.pilot-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.pilot-form input:focus,
+.pilot-form textarea:focus {
+  border-color: #a176ff;
+  box-shadow: 0 0 10px rgba(160, 118, 255, 0.3);
+}
+
+.pilot-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.pilot-form button {
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #a176ff, #5941a9);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(160, 118, 255, 0.2);
+  transition: 0.3s ease;
+}
+
+.pilot-form button:hover {
+  background: #b495ff;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+@media (max-width: 768px) {
+  /* Ensure the form’s H1 never gets clipped on phones */
+  .pilot-form-container h1 {
+    font-size: 1.4rem !important;       /* scale it down */
+    line-height: 1.3 !important;       /* give it breathing room */
+    margin: 1rem 0 0.5rem !important;   /* adjust top/bottom spacing */
+    padding: 0 0.5rem !important;       /* ensure it doesn’t touch the edges */
+    white-space: normal !important;     /* allow wrapping */
+    word-break: break-word !important;  /* wrap long words */
+  }
+}
+
+
+
+.mission-heading {
+  font-size: 5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #8e8f88;
+  text-shadow: 0 0 12px rgba(180, 220, 255, 0.5), 0 0 20px rgba(180, 220, 255, 0.3);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInMoveUp 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes fadeInMoveUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.mission-heading:hover {
+  color: #a26cce;
+  text-shadow: 0 0 12px #7c569c, 0 0 20px #ad9c9c;
+}
+
+
+.mission-text {
+  font-size: 2rem;
+  line-height: 1.8;
+  max-width: 100rem;
+  color: #d6d6d6;
+  margin-top: -1rem; /* adjust this as needed */
+  margin-left: 2.9rem ; 
+}
+
+/*.mission-spline {
+  width: 600px;
+  height: 600px;
+  margin: -10 auto;
+  display: block;
+  transform: translateY(-1400px); 
+  margin-left: 65rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(100, 100, 255, 0.2);
+}
+*/
+
+.contact-drone {
+  position: absolute;
+  top: 8rem;
+  right: 1rem;
+  width: 600px;
+  height: 800px;
+  transform: scale(0.7);
+  transform-origin: top right;
+  z-index: 1;
+  pointer-events: none;
+}
+.why-choose-us {
+  padding: 14rem 2rem 5rem; /* ↑ adds space above */
+  text-align: center;
+  background: transparent;
+  color: #eaeaea;
+  position: relative;
+}
+
+
+.why-choose-us h2 {
+  font-size: 4.5rem;
+  margin-bottom: 3rem;
+  color: #d0caff;
+  text-shadow: 0 0 15px rgba(148, 94, 255, 0.3);
+}
+
+.choose-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.choose-card {
+  width: 300px; /* Same width for all cards */
+  height: 400px; /* Fixed height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 0 20px rgba(255, 223, 150, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulseGlow 4s ease-in-out infinite;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.choose-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.choose-card p {
+  font-size: 0.95rem;
+  color: #e6e6e6;
+  padding: 0 0.5rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Backgrounds for each card */
+.pilot-card {
+  background-image: url('images/27ccbaee748ce255d3ab289d0f288b5a.jpg');
+}
+
+.ai-card {
+  background-image: url('images/Screenshot 2025-06-26 at 10.13.23 PM.png');
+}
+
+.tech-card {
+  background-image: url('images/ChatGPT Image Jun 26, 2025 at 10_17_13 PM.png');
+}
+
+.fast-card {
+  background-image: url('images/Screenshot 2025-06-26 at 10.27.23 PM.png');
+}
+
+
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 223, 150, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 223, 150, 0.5);
+  }
+}
+
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 223, 150, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 223, 150, 0.5);
+  }
+}
+
+.choose-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(117, 82, 151, 0.5); /* purple glow */
+}
+
+
+.choose-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+  filter: brightness(1.2);
+}
+
+.choose-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #9a8fc1;
+}
+
+.choose-card p {
+  font-size: 1rem;
+  color: #cccccc;
+}
+/* company page */
+.services-bubble-section {
+  text-align: center;
+  padding: 6rem 2rem 4rem 2rem; /* Top padding to push section down */
+}
+
+
+.services-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #8d89a6;
+  text-shadow: 0 0 15px rgba(241, 239, 245, 0.3);
+}
+
+
+
+.services-snapshot {
+  font-size: 5rem; /* Increased size */
+  color: #eeeee1;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 25px rgba(200, 150, 255, 0.3); /* subtle glow */
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInHeading 1.5s ease 1.5s forwards;
+}
+@keyframes fadeInHeading {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-snapshot.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.service-bubble {
+  width: 280px;
+  height: 350px; /* Taller */
+  background: #2c2c2c; /* Dark grey */
+  color: white;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3); /* stronger glow */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.service-bubble:hover {
+  box-shadow: 0 0 45px rgba(102, 100, 87, 0.6); /* brighter on hover */
+  transform: scale(1.04);
+}
+
+
+
+
+@keyframes bubbleGradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.drone-fly {
+  position: fixed;
+  top: 50%;
+  left: -200px;
+  width: 400px;
+  height: 400px;
+  z-index: 1000;
+  pointer-events: none;
+  animation: flyDiagonal 5s ease-out forwards;
+}
+
+/* Fly from left-bottom to top-right diagonally */
+@keyframes flyDiagonal {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(120vw, -120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+.contact-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 -2px 10px rgba(255, 215, 0, 0.2);
+  z-index: 9999;
+}
+
+.contact-bottom-bar p {
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: #f1f1f1;
+}
+
+.contact-bottom-bar strong {
+  color: #7f9cd6; /* Light golden highlight */
+}
+
+
+.video-stripe-section {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.3; /* adjust based on visibility preference */
+}
+
+.about-stripe-content {
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  
+  /* background: rgba(216, 207, 207, 0.3); /* subtle dark overlay */
+  
+  border-radius: 20px;
+  max-width: 800px;
+}
+.hover-video-card {
+  position: relative;
+  width: 280px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(225, 232, 182, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.hover-video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.video-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.7rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.highlight-bubble {
+      background: rgba(255, 255, 255, 0.07);
+      color: #a4baff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px rgba(100, 100, 255, 0.1);
+    }
+.contact-panel {
+  background: #00030a; /* dark navy */
+  color: #f1f5f9;       /* soft light text */
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+
+  /* Soft glow effect */
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15),
+              0 0 40px rgba(56, 189, 248, 0.1);
+
+  /* Optional: subtle animated glow pulse */
+  animation: panelGlow 4s infinite ease-in-out;
+}
+
+@keyframes panelGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.08),
+                0 0 30px rgba(56, 189, 248, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.2),
+                0 0 50px rgba(56, 189, 248, 0.12);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.08),
+                0 0 30px rgba(56, 189, 248, 0.05);
+  }
+}
+
+
+.contact-content {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-text p {
+  margin-bottom: 1rem;
+}
+
+.contact-text button {
+  background-color: #d7e1e4;
+  color: #2c3b5e;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  /* Glow Effect */
+  box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 8px #38bdf8, 0 0 16px #38bdf8;
+  }
+  50% {
+    box-shadow: 0 0 16px #38bdf8, 0 0 32px #38bdf8;
+  }
+  100% {
+    box-shadow: 0 0 8px #38bdf8, 0 0 16px #38bdf8;
+  }
+}
+
+
+.contact-text button:hover {
+  background-color: #b0edfd;
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 250px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-details a {
+  color: #e9eced;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.spline-hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.spline-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.video-background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* Very important: stay behind everything */
+}
+
+.video-background-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 1s ease;
+}
+
+/* Optional: spline visibility transitions */
+.spline-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.spline-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+  color: #eaeaea;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  color: #b892ca; /* Blue hover */
+  transform: scale(1.2);
+}
+.request-call-wrapper {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.request-call-button {
+  background-color: #42403c;
+  color: #e1e6d6;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.request-call-button:hover {
+  background-color: #8585a1;
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .choose-grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .choose-card {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-img {
+    width: 60px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+.glow-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 2rem;
+  color: #fff;
+}
+.glow-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.glow-panel li {
+  display: flex;
+  align-items: center;
+  margin: 0.75rem 0;
+  font-size: 2rem;
+}
+.glow-panel li::before {
+  content: "✔";
+  color: #4ade80; /* light green */
+ 
+  font-size: 1.1rem;
+  line-height: 1;
+  margin: 2rem auto 1rem;
+}
+@media (max-width: 768px) {
+  .glow-panel {
+    margin: 1rem;
+    padding: 1rem;
+     margin-top: 3rem; 
+  }
+  .glow-panel li {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* MOBILE HEADER FIX */
+@media (max-width: 768px) {
+  /* Remove the extra left-shift on the logo image */
+  .logo-img {
+    margin-left: 0 !important;
+    transform: translateY(0) !important;
+    width: 60px;                /* scale it down if needed */
+  }
+
+  /* Shrink the text a bit so “AIRAVATHA” doesn’t get cut off */
+  .logo {
+    font-size: 2rem !important;
+    margin-left: 0 !important;
+  }
+
+  /* Reduce header padding so there’s more room */
+  header.site-header {
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+/* —— MOBILE CONTACT PAGE FIX —— */
+@media (max-width: 768px) {
+  /* 1) Remove the spline viewer on small screens */
+  .contact-drone {
+    display: none !important;
+  }
+
+  /* 2) Give your hero section some internal padding */
+  main.company-hero {
+    padding: 2rem 1rem;
+  }
+
+  /* 3) Scale down & center the heading */
+  .mission-heading {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+  }
+
+  /* 4) Collapse margins on the paragraph so it never overflows */
+  .mission-text {
+    margin: 0 auto 1.5rem !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+  }
+
+  /* 5) Center your social icons & request-call button */
+  .social-icons {
+    justify-content: center !important;
+    margin: 1rem 0 !important;
+  }
+  .request-call-wrapper {
+    margin: 1rem auto !important;
+  }
+}
+@media (max-width: 768px) {
+  .video-background-wrapper {
+    /* show the poster as a CSS background */
+    background: url("video-poster.jpg") center center / cover no-repeat;
+  }
+  /* still hide the heavy <video> tag */
+  #bgVideo {
+    display: none !important;
+  }
+}
+/* —— PHOTO-CARD STYLES —— */
+.hover-photo-card {
+  /* shrink from 33% to 30% of the row */
+  flex: 1 1 calc(30% - 2rem) !important;
+  /* cap their width so they never get too big */
+  max-width: 280px !important;
+  /* tighten the margin so the grid stays balanced */
+  margin: 0.75rem !important;
+}
+
+.hover-photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hover-photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.photo-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #edf3d1;
+  padding: 0.7rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+/* —— IMAGE LABELS —— */
+.image-label {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #edf3d1;       /* match your design palette */
+  letter-spacing: 0.5px;
+}
+
+/* adjust card sizing if needed */
+.hover-photo-card {
+  flex: 1 1 calc(30% - 2rem) !important;
+  max-width: 280px !important;
+  margin: 0.75rem !important;
+}
+/* —— CENTERED PANEL STRIP —— */
+.panel-strip {
+  width: 80%;
+  max-width: 3000px;
+  height: 180px;                /* or however tall you like */
+  margin: -100px auto 2rem auto;/* or your chosen offsets */
+  
+  background-image: url("ChatGPT Image Jul 2, 2025 at 04_39_22 PM.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;     /* ← show the full image */
+  
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+
+}
+/* —— Full-width, auto-height panel strip —— */
+/* —— Full-width strip with black on the right —— */
+.panel-strip-full {
+  width: 100%;
+  box-sizing: border-box;       /* include padding in the width */
+  padding-right: 6%;           /* adjust this % or use px to taste */
+  background-color: #000;       /* black fill behind the image */
+  overflow: hidden;             /* hide any tiny overflow */
+}
+
+.panel-strip-full img {
+  display: block;
+  width: 100%;                  /* fills the wrapper’s content box */
+  height: auto;
+}
+
+
+
+/* small-screen tweak */
+@media (max-width: 768px) {
+  .panel-strip-full {
+    padding-right: 12%;     /* smaller gutter on phones */
+  }
+  .panel-strip-full img {
+    width: 100%;           /* make sure it still fills container */
+    margin-left: 0;        /* no shifting on mobile */
+  }
+}

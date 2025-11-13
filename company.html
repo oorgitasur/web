@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company | NIMBUZKI</title>
+  <link rel="stylesheet" href="style_copy.css" />
+  <style>
+    /* Header/Nav styles copied from join-as-pilot (standard) */
+    header.site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    header .logo-img {
+      width: 120px;
+      height: auto;
+    }
+    header nav.main-nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    header nav.main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .menu-toggle {
+      display: none;
+      margin-left: auto;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1001;  /* ensure toggle stays atop */
+    }
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      /* make menu fixed above all content */
+      position: fixed;
+      top: 4rem; /* adjust to header height */
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.95);
+      padding: 1rem 0;
+      z-index: 10000;
+    }
+    .dropdown.show { display: flex !important; }
+    .dropdown a {
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    @media (max-width: 768px) {
+      header.site-header { padding: 0.75rem 1rem; }
+      header nav.main-nav { display: none !important; }
+      .menu-toggle { display: block; }
+    }
+
+    /* Video card blur until tapped */
+    .hover-video-card video {
+      width: 100%; height: auto;
+      filter: blur(4px);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .hover-video-card.playing video {
+      filter: none;
+    }
+    .tap-hint {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffffcc;
+      font-size: 1rem; font-weight: 500;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .hover-video-card.playing .tap-hint {
+      opacity: 0;
+    }
+    .video-text {
+      position: absolute; bottom: 0; width: 100%;
+      background: rgba(0,0,0,0.5); color: #edf3d1;
+      padding: 0.7rem; font-weight: 600;
+      font-size: 1.3rem; line-height: 1.2;
+      text-align: center; border-radius: 0 0 20px 20px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <!-- Unified Header (join-as-pilot style) -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('nav-placeholder').innerHTML = html)
+      .catch(err => console.error('Nav load failed:', err));
+  </script>
+   <script>
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+  </script>
+
+  <!-- then the rest of your company page content… -->
+  <main class="company-hero"> 
+    <!-- … -->
+  </main>
+
+  <!-- Main Content -->
+  <main class="company-hero">
+    <h1 class="mission-heading">Our Mission</h1>
+    <p class="mission-text">
+      NIMBUZKI ~ Redefining Aerial Intelligence for India.<br />
+      We’re building the future of drone services:<br />
+      Smart · Scalable · Affordable
+    </p>
+
+   <section class="services-bubble-section">
+  <h2 class="services-snapshot">What We Do</h2>
+  <div class="bubble-container">
+
+    <!-- 01 • Precision Agro-Tech -->
+    <div class="hover-photo-card">
+      <a href="images/agri.png" target="_blank">
+        <img src="images/agri.png" alt="Precision Agro-Tech">
+      </a>
+      <div class="image-label">Precision Agro-Tech</div>
+    </div>
+
+    <!-- 02 • AI-Mapping & 3D Contour -->
+    <div class="hover-photo-card">
+      <a href="images/ai.png" target="_blank">
+        <img src="images/ai.png" alt="AI-Mapping & 3D Contour">
+      </a>
+      <div class="image-label">AI-Mapping & 3D Contour</div>
+    </div>
+
+    <!-- 03 • Real-Estate & Infra Mapping -->
+    <div class="hover-photo-card">
+      <a href="images/infra.png" target="_blank">
+        <img src="images/infra.png" alt="Real-Estate & Infra Mapping">
+      </a>
+      <div class="image-label">Real-Estate & Infra Mapping</div>
+    </div>
+
+    <!-- 04 • FPV & Event Shoots -->
+    <div class="hover-photo-card">
+      <a href="images/fpv.png" target="_blank">
+        <img src="images/fpv.png" alt="FPV & Event Shoots">
+      </a>
+      <div class="image-label">FPV & Event Shoots</div>
+    </div>
+
+   
+
+    <!-- 06 • Supporting Rapid Pilot Jobs -->
+    <div class="hover-photo-card">
+      <a href="images/pilot.png" target="_blank">
+        <img src="images/pilot.png" alt="Supporting Rapid Pilot Jobs">
+      </a>
+      <div class="image-label">Supporting Rapid Pilot Jobs</div>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <div class="contact-bottom-bar">
+    <p>Highly responsive on <strong>WhatsApp</strong> and <strong>Email</strong>. Get services in no time 🚀</p>
+  </div>
+
+
+</body>
+</html>
+

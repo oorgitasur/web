@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join as Pilot | AIRAVATHA</title>
+  <link rel="stylesheet" href="style_copy.css" />
+  <!-- Responsive Header Styles -->
+  <style>
+    /* Ensure header is consistent and responsive */
+    header.site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    header .logo-img {
+      width: 120px;
+      height: auto;
+    }
+    header nav.main-nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    header nav.main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      margin-left: auto;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+    }
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%; left: 0;
+      width: 100%; background: rgba(0,0,0,0.9);
+      padding: 1rem 0;
+    }
+    .dropdown.show { display: flex; }
+    .dropdown a {
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    /* Reduce top/bottom spacing for pilot page */
+    main.pilot-join-main {
+      padding: 2rem;
+    }
+    .pilot-form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      /* Header */
+      header.site-header { padding: 0.75rem 1rem; }
+      nav.main-nav { display: none !important; }
+      .menu-toggle { display: block; }
+
+      /* Make form container wider on mobile */
+      .pilot-form-container {
+        max-width: 100%;
+        margin: 0.5rem;
+        padding: 2rem 1rem;
+      }
+      .pilot-form-container input,
+      .pilot-form-container textarea,
+      .pilot-form-container button {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Shared Navigation -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('nav-placeholder').innerHTML = html)
+      .catch(err => console.error('Nav load failed:', err));
+  </script>
+
+  <!-- Pilot Join Form -->
+  <main class="pilot-join-main">
+    <div class="pilot-form-container">
+      <h1>#NIMBUZKI SQUAD<br/>Drone pilot? JOIN US! &lt;3</h1>
+      <p>Welcome to the squad, let's hover together! 🛸</p>
+      <form id="pilotForm" class="pilot-form">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <textarea name="experience" placeholder="Tell us about your drone experience..." required></textarea>
+        <button type="submit">Apply Now</button>
+      </form>
+    </div>
+
+    <!-- glowing benefits panel -->
+    <section class="glow-panel">
+      <ul>
+        <li>Get good payments</li>
+        <li>Many job contracts</li>
+        <li>Parttime to fulltime basis</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div class="contact-bottom-bar">
+    <p>Highly responsive on <strong>WhatsApp</strong> and <strong>Email</strong>. Get best pilot job offers on our platform.</p>
+  </div>
+
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+  </script>
+    
+  … footer …  
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+  </script>
+  <!-- ← NEW: your form handler -->
+  <script src="form.js" defer></script>
+</body>
+</html>

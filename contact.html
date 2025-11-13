@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | NIMBUZKI</title>
+  <link rel="stylesheet" href="style_copy.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Shared Navigation -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('nav-placeholder').innerHTML = html)
+      .catch(err => console.error('Nav load failed:', err));
+  </script>
+
+  <!-- Main Contact Content -->
+  <main class="company-hero">
+    <spline-viewer
+      class="contact-drone"
+      url="https://prod.spline.design/Y7TUhGizTlD8dXwO/scene.splinecode">
+    </spline-viewer>
+
+    <h1 class="mission-heading">CONTACT US</h1>
+    <p class="mission-text">
+      <strong>📧 Email:</strong> nimbuzkienterprises@gmail.com<br>
+      <strong>📍 Office:</strong> Delhi, India<br>
+      <strong>📞 Phone:</strong> +91 87002 18457
+    </p>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/fish_n_chipzzz" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@fish_n_chipzzz" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="request-call-wrapper">
+      <button class="request-call-button" onclick="location.href='tel:+91 87002 18457'">
+        📞 Request a Call
+      </button>
+    </div>
+  </main>
+
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js"></script>
+
+  <div class="contact-bottom-bar">
+    <p>Highly responsive on <strong>WhatsApp</strong> and <strong>Email</strong>. Get services in no time 🚀</p>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Determine low-end devices by memory or screen width
+    const deviceMemory = navigator.deviceMemory || 4; 
+    const isLowEnd = deviceMemory < 1 || window.innerWidth < 768;
+
+    const container = document.querySelector('.contact-drone');
+
+    if (isLowEnd) {
+      // 1) Remove the heavy spline viewer
+      container.innerHTML = '';
+      // 2) Insert a lightweight fallback image
+      const img = document.createElement('img');
+      img.src = 'spline-fallback.jpg';          // create/export a static PNG of your scene
+      img.alt = '3D view of our contact drone';
+      img.style.width = '100%';
+      container.appendChild(img);
+    } else {
+      // On capable devices, dynamically load the Spline runtime
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = 'https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js';
+      document.body.appendChild(script);
+    }
+  });
+</script>
+
+</body>
+</html>

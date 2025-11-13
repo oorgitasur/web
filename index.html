@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIMBUZKI</title>
+  <link rel="stylesheet" href="style_copy.css" />
+  <!-- Spline Viewer Script -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.16/build/spline-viewer.js"></script>
+  <style>
+    /* Reset default margins */
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+  
+
+    /* Video Background (always visible) */
+    .video-background-wrapper {
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -2; overflow: hidden;
+      transition: opacity 1s ease;
+    }
+    .video-background-wrapper video {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* Spline behind header */
+    .header-spline {
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -1; opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+    }
+    .header-spline.visible { opacity: 1; pointer-events: auto; }
+
+    /* Header/Nav (default desktop) */
+    .site-header {
+      position: relative; z-index: 1;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 0rem; width: 100%;
+    }
+    .logo { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-img { width: 120px; height: auto; }
+    .main-nav { display: flex; gap: 2rem; }
+    .main-nav a { color: inherit; text-decoration: none; font-weight: 500; }
+    .menu-toggle { display: none; }
+    .dropdown { display: none; }
+
+    /* Main content */
+    main { margin-bottom: 0; }
+    .hero-heading {
+      text-align: center; margin: 1.5rem 1rem 1rem;
+      white-space: normal; word-break: break-word;
+    }
+    .hero-heading span { display: block; }
+
+    /* Footer */
+    .contact-bottom-bar {
+      margin: 0; padding: 1rem 2rem;
+      background: rgba(0,0,0,0.5);
+    }
+    .contact-panel {
+      margin: 0; padding: 2rem 2rem 4rem;
+      background: #000; position: relative; z-index: 1;
+    }
+
+    /* Responsive mobile layout */
+    @media (max-width: 768px) {
+      /* Keep video & spline visible on mobile */
+        .video-background-wrapper {
+    display: none !important; }
+      .site-header {
+        flex-direction: row; justify-content: space-between;
+        align-items: center; padding: 0.80rem 1rem;
+      }
+      .main-nav { display: none !important; }
+      .menu-toggle {
+        display: flex; align-items: center;
+        font-size: 1rem; font-weight: 600;
+        color: #7d4949; cursor: pointer;
+        margin: 0 auto;
+      }
+      .menu-toggle .menu-text { padding: 0.5rem; }
+      .dropdown {
+        display: none; flex-direction: column;
+        width: 100%; background: rgba(0,0,0,0.8);
+        position: absolute; top: 100%; left: 0;
+      }
+      .dropdown.show { display: flex; }
+      .dropdown a {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        color: #fff; text-decoration: none;
+      }
+
+      .hero-heading {
+        font-size: 1.25rem;
+        margin: 1rem 0.75rem 0.5rem;
+      }
+      .choose-grid {
+        display: grid; grid-template-columns: 1fr; gap: 1rem;
+        padding: 0 1rem;
+      }
+      .contact-panel { padding: 1.5rem 1rem 3rem; }
+      .contact-bottom-bar { text-align: center; padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Shared Navigation -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('nav-placeholder').innerHTML = html)
+      .catch(err => console.error('Nav load failed:', err));
+  </script>
+
+  <!-- Video Background -->
+  <div class="video-background-wrapper" id="videoBackgroundWrapper">
+  <video
+  id="bgVideo"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  poster="video-poster.jpg"
+  style="object-fit: cover; width:100vw; height:100vh;"
+>
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+
+  <!-- Spline Behind Header -->
+  <div class="header-spline" id="headerSpline">
+    <spline-viewer url="https://prod.spline.design/h3rOFkmohXROUfXR/scene.splinecode"
+      style="width:100vw; height:100vh;"></spline-viewer>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <h1 class="hero-heading">
+      <span class="line-1">INDIA'S NEXT-GEN</span>
+      <span class="line-2">DRONE SERVICE</span>
+      <span class="line-3">PLATFORM</span>
+    </h1>
+
+    <section class="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <div class="choose-grid">
+        <div class="choose-card pilot-card">
+          <h3>DGCA-Licensed Pilots</h3>
+          <p>Trained and certified professionals ensuring legal & safe operations.</p>
+        </div>
+        <div class="choose-card ai-card">
+          <h3>AI-Backed Insights</h3>
+          <p>Real-time analytics powered by aerial intelligence & machine learning.</p>
+        </div>
+        <div class="choose-card tech-card">
+          <h3>Modular Drones</h3>
+          <p>Custom-configurable for spraying, mapping, events, & more.</p>
+        </div>
+        <div class="choose-card fast-card">
+          <h3>Fastest Deployment</h3>
+          <p>Our response time is unmatched—get drones airborne in minutes.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contact -->
+  <div class="contact-bottom-bar">
+    <p>Highly responsive on <strong>WhatsApp</strong> and <strong>Email</strong>. Get services in no time 🚀</p>
+  </div>
+  <section class="contact-panel">
+    <div class="contact-content">
+      <div class="contact-text">
+        <h2>Have questions?</h2>
+        <p>We’d love to talk. Reach out or request a callback today.</p>
+        <button onclick="location.href='tel:+91 87002 18457'">📞 Request a Call</button>
+      </div>
+      <div class="contact-details">
+        <p><strong>Nimbuzki enterprises Pvt. Ltd.</strong></p>
+        <p>📍 Office: Delhi, India </p>
+        <p>Email: <a href="mailto:nimbuzkienterprises@gmail.com">nimbuzkienterprises@gmail.com/a></p>
+        <p>Phone:+91-87002 18457</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const videoWrapper = document.getElementById('videoBackgroundWrapper');
+        const video = document.getElementById('bgVideo');
+        if (videoWrapper) videoWrapper.style.opacity = '0';
+        if (video) video.pause();
+        const spline = document.getElementById('headerSpline');
+        if (spline) spline.classList.add('visible');
+      }, 3000);
+    });
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const vid = document.getElementById('bgVideo');
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      // hide on phones
+      vid.style.display = 'none';
+      return;
+    }
+
+    // on tablets+desktops, load the full-res clip
+    const source = document.createElement('source');
+    source.src  = 'video.mp4';      // make sure this path is correct!
+    source.type = 'video/mp4';
+    vid.appendChild(source);
+
+    // then tell the browser to load & play
+    vid.load();
+    vid.play().catch(() => { /* autoplay might be blocked */ });
+  });
+</script>
+
+</body>
+</html>

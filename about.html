@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | NIMBUZKI</title>
+  <link rel="stylesheet" href="style_copy.css" />
+  <!-- Spline Viewer Script if needed -->
+  <style>
+    /* Reset default margins */
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+    /* Header/Nav (same as Home) */
+    .site-header {
+      position: relative;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      width: 100%;
+    }
+    .site-header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .site-header .logo-img {
+      width: 120px;
+      height: auto;
+    }
+    nav.main-nav {
+      display: flex;
+      gap: 2rem;
+    }
+    nav.main-nav a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 10000;
+    }
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.9);
+      padding-top: 4rem; /* space for header height */
+      z-index: 9999;
+      overflow-y: auto;
+    }
+    .dropdown a {
+      padding: 0.75rem 1rem;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1rem;
+      }
+      nav.main-nav { display: none !important; }
+      .menu-toggle { display: block !important; }
+      .dropdown.show { display: flex; }
+    }
+
+    /* About Us Content Styles (unchanged) */
+    .company-hero {
+      padding: 2rem;
+      text-align: center;
+    }
+    .mission-heading {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .mission-text {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #e7e7e7;
+    }
+    .contact-bottom-bar {
+      margin: 0;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Nav -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="aira.png" alt="Airavatha Logo" class="logo-img" />
+      <span>NIMBUZKI</span>
+    </div>
+    <button class="menu-toggle" onclick="toggleDropdown()">MENU</button>
+    <nav class="main-nav">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <a href="about.html" class="active">ABOUT US</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="join_as_pilot.html">JOIN AS PILOT</a>
+    </nav>
+    <div class="dropdown" id="dropdownMenu">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="join_as_pilot.html">JOIN AS PILOT</a>
+    </div>
+  </header>
+
+  <!-- About Us Content -->
+  <main class="company-hero">
+    <h1 class="mission-heading">About Us</h1>
+    <p class="mission-text">
+      At NIMBUZKI, we are a team of innovators, engineers, and visionaries<br />
+      building India's most advanced and accessible drone ecosystem.<br /><br />
+      We’re a team of ambitious engineering students on a mission to make India the world’s next drone powerhouse.
+    </p>
+  </main>
+
+  <div class="contact-bottom-bar">
+    <p>Highly responsive on <strong>WhatsApp</strong> and <strong>Email</strong>. Get services in no time 🚀</p>
+  </div>
+
+  <!-- Video Stripe Section: plays inline on mobile -->
+  <section class="video-stripe-section">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="images/ae67f75a71014ccdae2d0bc9117.mov" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="about-stripe-content"></div>
+    <!-- PANEL STRIP -->
+<div class="panel-strip-full">
+  <img src="ChatGPT Image Jul 2, 2025 at 04_39_22 PM.png" alt="AI Tech Panel Strip">
+</div>
+
+  </section>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
